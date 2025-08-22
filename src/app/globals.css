@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=WDXL+Lubrifont+TC&display=swap');
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --keppel: #3ca1a1;
+  --bunker: #131a1c;
+  --paradiso: #2e7b7b;
+  --lochinvar: #35948c;
+  --blue-dianne: #1d4e4f;
+  --timber-green: #192c2d;
+  --spectra: #2c4c50;
+  --gable-green: #17343c;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fadeInScale {
+  animation: fadeInScale 0.2s ease-out;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.lubrifont {
+  font-family: "WDXL Lubrifont TC", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--keppel);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--lochinvar);
+}
+
+.player-info-box {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.info-card {
+  min-width: 220px;
+  background: linear-gradient(to right, #6c9c1c, rgba(0, 0, 0, 0.0));
+  border-radius: 14px;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: white;
+  backdrop-filter: blur(6px);
+}
+
+.info-icon {
+  font-size: 18px;
+  padding: 8px;
+  border-radius: 12px;
+}
+
+.info-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-label {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.info-value {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.status-container {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  background-color: rgba(0, 0, 0, 0.25);
+  padding: 6px 12px;
+  border-radius: 14px;
+}
+
+.status-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 55px;
+}
+
+.icon {
+  font-size: 16px;
+  margin-bottom: 4px;
+  padding: 6px;
+  border-radius: 6px;
+  color: white;
+}
+
+.bar {
+  width: 100%;
+  height: 4px;
+  background-color: #333;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  border-radius: 2px;
+}
+
+.hunger { background-color: orange; }
+.thirst { background-color: #00bfff; }
+.health { background-color: red; }
+.armor { background-color: #aaa; }
+.stress { background-color: limegreen; }
+
+.hunger-icon { background-color: orange; }
+.thirst-icon { background-color: #00bfff; }
+.health-icon { background-color: red; }
+.armor-icon { background-color: #aaa; }
+.stress-icon { background-color: limegreen; }
+
+.voice-mode {
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+  font-size: 16px;
+  color: white;
+  background: rgba(0, 0, 0, 0.25);
+  padding: 4px 10px;
+  border-radius: 10px;
+  font-weight: 1000;
+  font-family: sans-serif;
+}
+
+.voice-label {
+  font-weight: bold;
+}
+
+.voice-whisper { color: #3399ff; }
+.voice-normal { color: #33cc33; }
+.voice-shout { color: #ff3333; }
